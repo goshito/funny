@@ -14,11 +14,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
- * 
- */
-int main(int argc, char** argv) {
 
+int main(int argc, char** argv) {
+    int score = 4;
+    switch(score) {
+        case 1:
+            printf("Only one?? Come on!");
+            break;
+        case 2:
+            printf("Two is better than one.");
+            break;
+        default :
+            printf("Not two, not one... come ooon!");
+            break;
+        case 3:
+printf("Three is better than two and one.");
+break;
+    }
     return (EXIT_SUCCESS);
 }
 
