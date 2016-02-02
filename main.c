@@ -1,35 +1,12 @@
 #include <stdio.h>
 
-struct Student
-{
-    char name[100];
-    int marks;
-    int year;
-    char gender;
-};
-
-struct Student readStudentFromFile()
-{
-    //Get a pointer to the opened file
-    FILE *fp = fopen("Student.dat","r");
-    struct Student student;
-
-    //Read from the file
-    fscanf(fp,"%s %d %d %c\n",student.name,&student.marks,&student.year, &student.gender);
-
-    //Close the file
-    fclose(fp);
-
-    return student;
-}
-
-void printStudent(struct Student student)
-{
-    printf("%s %d %d %c\n",student.name,student.marks,student.year, student.gender);
-}
-
-int main()
-{
-    struct Student student = readStudentFromFile();
-    printStudent(student);
+int main() {
+    char g[] = {'a', 'b', 'c', '\0'};
+    printf("%s\n", g);
+    printf("g=%d\n", sizeof(g));
+    char e[] = "abc";
+    printf("e=%d\n", sizeof(e));
+    char *f = "abc";
+    printf("f=%d", sizeof(f)); //char *f = "abc" why size is 8. each element has size = 2
+    return 0;
 }
