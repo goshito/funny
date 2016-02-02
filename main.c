@@ -1,31 +1,32 @@
 #include <stdio.h>
 
-//0-false 1-true
-int isLeapYear(int year)
-{
-    if(year%400==0)
-        return 1;
-
-    if(year%100==0)
-        return 0;
-
-    if(year%4==0)
-        return 1;
-
-    return 0;
+int calculateSumEvenNumbersUpTo(int n) {
+    int result = 0;
+    for (int i = 1; i <= n; i++) {
+        result = result + 2 * i;
+    }
+    return result;
 }
 
-//%4 = Leap YEar
-//1900,2000,2100,2200,2300,2400
-
-int main()
-{
-    printf("2000:%d\n",isLeapYear(2000));
-    printf("1900:%d\n",isLeapYear(1900));
-    printf("1904:%d\n",isLeapYear(1904));
-    printf("1901:%d\n",isLeapYear(1901));
-
-    return 0;
+int II_SecondcalculateSumEvenNumbersUpTo(int n) {
+    int result = ;
+    for (i = 1; i <= n * 2; i = i + 2) {
+        result = result + i
+    }
+    return result;
 }
 
 
+int calculateMultipUpTo(int n) {
+    int result = 1;
+    for (int i = 1; i <= n; i++) {
+        result = result * i;
+    }
+    return result;
+}
+
+int main () {
+    printf("\nSum up to 5 is %d", calculateSumUpTo(5));
+    printf("\nMultiplication up to 5 is %d", calculateMultipUpTo(5));
+    return 0;
+}
