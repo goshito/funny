@@ -16,21 +16,13 @@
 
 
 int main(int argc, char** argv) {
-    int score = 4;
-    switch(score) {
-        case 1:
-            printf("Only one?? Come on!");
-            break;
-        case 2:
-            printf("Two is better than one.");
-            break;
-        default :
-            printf("Not two, not one... come ooon!");
-            break;
-        case 3:
-printf("Three is better than two and one.");
-break;
-    }
+    int testers[10] = {34, 56, 982, 29};
+    char testers1[] = "Trideset i chetiri";
+    printf("%d", testers[0]);
+    /*printf("%d\n", testers[0]);
+    printf("%d\n", testers1);
+    printf("%d\n", testers1[0]);
+     */
     return (EXIT_SUCCESS);
 }
 
