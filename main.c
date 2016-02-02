@@ -1,28 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   main.c
- * Author: georgi
- *
- * Created on February 1, 2016, 8:28 PM
- */
-
 #include <stdio.h>
-#include <stdlib.h>
 
+//0-false 1-true
+int isLeapYear(int year)
+{
+    if(year%400==0)
+        return 1;
 
-int main(int argc, char** argv) {
-    int testers[10] = {34, 56, 982, 29};
-    char testers1[] = "Trideset i chetiri";
-    printf("%d", testers[0]);
-    /*printf("%d\n", testers[0]);
-    printf("%d\n", testers1);
-    printf("%d\n", testers1[0]);
-     */
-    return (EXIT_SUCCESS);
+    if(year%100==0)
+        return 0;
+
+    if(year%4==0)
+        return 1;
+
+    return 0;
 }
+
+//%4 = Leap YEar
+//1900,2000,2100,2200,2300,2400
+
+int main()
+{
+    printf("2000:%d\n",isLeapYear(2000));
+    printf("1900:%d\n",isLeapYear(1900));
+    printf("1904:%d\n",isLeapYear(1904));
+    printf("1901:%d\n",isLeapYear(1901));
+
+    return 0;
+}
+
 
