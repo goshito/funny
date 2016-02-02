@@ -1,17 +1,35 @@
 #include <stdio.h>
 
-int numberOfDigitsIn(int n) {
-    int temp = n;
-    int count;
-    
-    while(temp != 0) {
-        count++;
-        temp = temp / 10;
-    }
-    return count;
+struct Student
+{
+    char name[100];
+    int marks;
+    int year;
+    char gender;
+};
+
+struct Student readStudentFromFile()
+{
+    //Get a pointer to the opened file
+    FILE *fp = fopen("Student.dat","r");
+    struct Student student;
+
+    //Read from the file
+    fscanf(fp,"%s %d %d %c\n",student.name,&student.marks,&student.year, &student.gender);
+
+    //Close the file
+    fclose(fp);
+
+    return student;
 }
 
-int main() {
-    printf("%d", numberOfDigitsIn(10));
-    return 0;
+void printStudent(struct Student student)
+{
+    printf("%s %d %d %c\n",student.name,student.marks,student.year, student.gender);
+}
+
+int main()
+{
+    struct Student student = readStudentFromFile();
+    printStudent(student);
 }
