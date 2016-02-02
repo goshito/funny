@@ -1,27 +1,17 @@
 #include <stdio.h>
 
-//0-Not prime
-//1 - prime
-// 12 (2, 3,4,...,11)
-int isPrime(int n)
-{
-    if (n == 1) {
-        return 0;
-    } else {
-        for(int i=2;i<n;i++){
-            if(n%i == 0){
-            return 0;
-            }
-        }
+int numberOfDigitsIn(int n) {
+    int temp = n;
+    int count;
+    
+    while(temp != 0) {
+        count++;
+        temp = temp / 10;
     }
-    return 1;
+    return count;
 }
 
-//12 - 2,3,4,6
-int main()
-{
-    printf("4 : %d\n",isPrime(4));
-    printf("5 : %d\n",isPrime(5));
-    printf("1 : %d\n",isPrime(1));
+int main() {
+    printf("%d", numberOfDigitsIn(10));
     return 0;
 }
