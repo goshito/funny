@@ -1,17 +1,13 @@
 #include <stdio.h>
 
-void swap(int a, int b) {
-    int temp;
-    temp = a;
-    a = b;
-    b = temp;
+void addOne(int a[]) {
+    a[1]++;
 }
 int main() {
-    int i = 1, j = 2;
-    
-    swap(i, j);
-    
-    printf("i:%d, j:%d", i, j);
-    
+    int marks[] = {2, 5, 10};
+    printf("%d\n", marks);
+    printf("before addOne - marks[0]: %d\n", marks[1]);
+    addOne(marks);
+    printf("after addOne - marks[0]: %d\n", marks[1]);    
     return 0;
 }
