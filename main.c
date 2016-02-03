@@ -1,21 +1,11 @@
 #include <stdio.h>
 
-struct Point {
-    int x;
-    int y;
-};
-
-typedef struct Point Point;
-
-void increment(Point* p) {
-    p->x++;
-    p->y++;
-}
+#define MAX(a, b) a>b?a:b
 
 int main() {
-    Point p1 = {1, 2};
-    printf("Before p1.x:%d, p1.y:%d", p1.x, p1.y);
-    increment(&p1);
-    printf("\nAfter p1.x:%d, p1.y:%d", p1.x, p1.y);
+    int i = 5, j = 6;
+    printf("%d\n", MAX(++i, ++j));
+    printf("%d %d", i, j);
     return 0;
 }
+//Macros?? WTF?
