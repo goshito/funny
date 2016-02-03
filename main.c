@@ -1,11 +1,15 @@
 #include <stdio.h>
 
-#define MAX(a, b) a>b?a:b
+union Point {
+    int x;
+    int y;
+};
+
+typedef union Point Point;
 
 int main() {
-    int i = 5, j = 6;
-    printf("%d\n", MAX(++i, ++j));
-    printf("%d %d", i, j);
+    Point p1;
+    p1.x = 1; p1.y = 2;
+    printf("size:%d,  p1.x:%d, p1.y:%d,", sizeof(p1), p1.x, p1.y);
     return 0;
 }
-//Macros?? WTF?
