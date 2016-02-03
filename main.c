@@ -1,13 +1,21 @@
 #include <stdio.h>
 
-void addOne(int a[]) {
-    a[1]++;
+struct Point {
+    int x;
+    int y;
+};
+
+typedef struct Point Point;
+
+void increment(Point* p) {
+    p->x++;
+    p->y++;
 }
+
 int main() {
-    int marks[] = {2, 5, 10};
-    printf("%d\n", marks);
-    printf("before addOne - marks[0]: %d\n", marks[1]);
-    addOne(marks);
-    printf("after addOne - marks[0]: %d\n", marks[1]);    
+    Point p1 = {1, 2};
+    printf("Before p1.x:%d, p1.y:%d", p1.x, p1.y);
+    increment(&p1);
+    printf("\nAfter p1.x:%d, p1.y:%d", p1.x, p1.y);
     return 0;
 }
